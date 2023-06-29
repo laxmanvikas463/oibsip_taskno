@@ -1,0 +1,41 @@
+import java.util.*;
+class Main
+{
+    public static void main(String args[])
+    {
+        System.out.println("***Number Guessing game***");
+        System.out.println("You have 5 attempts");
+        Scanner sc=new Scanner(System.in);
+        Random r=new Random();
+        int rno=r.nextInt(100);
+        int c=1;
+        int score=90;
+        while(c<=5)
+        {
+            System.out.print("Enter a number: ");
+            int n=sc.nextInt();
+            if(rno>n)
+            {
+                System.out.println("Guess higher");
+                System.out.println();
+                c++;
+                score-=10;
+            }
+            else if(rno<n)
+            {
+                System.out.println("Guess lower");
+                System.out.println();
+
+
+                c++;
+                score-=10;
+            }
+            else
+            {
+                System.out.println("You did it in "+c+" attempts");
+                break;
+            }
+        }
+        System.out.println("Your score is "+score);
+    }
+}
